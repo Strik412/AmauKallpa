@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     function addToCart(productId, productName, productPrice) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
         const product = {
             id: productId,
             name: productName,
             price: parseFloat(productPrice)
         };
         cart.push(product);
-        localStorage.setItem('cart', JSON.stringify(cart));
+        sessionStorage.setItem('cart', JSON.stringify(cart));
         showFloatingAlert('Producto añadido al carrito');
     }
 

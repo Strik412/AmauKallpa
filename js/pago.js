@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Cargar el resumen del pedido
     function loadOrderSummary() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
         let summaryHtml = '<table><thead><tr><th>Producto</th><th>Cantidad</th><th>Precio Unitario</th><th>Subtotal</th></tr></thead><tbody>';
 
         let totalPrice = 0;
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Enviar el resumen del carrito y los datos de envío por WhatsApp
     function sendCartByWhatsApp() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
 
         // Obtener los datos del formulario de envío
         const name = document.getElementById('nombre').value;
